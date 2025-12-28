@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, QRL } from "@builder.io/qwik";
 import { Button } from "../button";
 
 interface ContactCardProps {
@@ -7,7 +7,7 @@ interface ContactCardProps {
   subtitle?: string;
   target?: string;
   rel?: string;
-  onClick$?: (e?: Event) => void;
+  onClick$?: QRL<(e?: Event) => void>;
   fullWidth?: boolean;
 }
 

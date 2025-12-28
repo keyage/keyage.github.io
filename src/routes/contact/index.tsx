@@ -1,4 +1,4 @@
-import { component$ } from "@builder.io/qwik";
+import { component$, $ } from "@builder.io/qwik";
 import PageLayout from "~/components/page-layout";
 import FlexibleGrid from "~/components/flexible-grid";
 import ContactCard from "~/components/contact-card";
@@ -6,7 +6,7 @@ import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
   return (
-    <PageLayout showBackButton={true} onBackClick$={() => history.back()}>
+    <PageLayout showBackButton={true} onBackClick$={$(() => history.back())}>
       <div class="space-y-4">
         <h1
           class="indie-flower-regular text-5xl"

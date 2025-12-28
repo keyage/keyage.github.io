@@ -1,11 +1,6 @@
 import { component$, $ } from "@builder.io/qwik";
 import { useNavigate } from "@builder.io/qwik-city";
-import {
-  LuMapPin,
-  LuSprout,
-  LuCoffee,
-  LuArrowRight,
-} from "@qwikest/icons/lucide";
+import { LuMapPin, LuSprout, LuCoffee } from "@qwikest/icons/lucide";
 import PageLayout from "~/components/page-layout";
 import FlexibleGrid from "~/components/flexible-grid";
 import ContactCard from "~/components/contact-card";

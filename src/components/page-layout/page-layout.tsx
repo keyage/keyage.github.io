@@ -1,9 +1,9 @@
-import { component$, Slot } from "@builder.io/qwik";
+import { component$, Slot, QRL } from "@builder.io/qwik";
 import { LuArrowLeft } from "@qwikest/icons/lucide";
 
 interface PageLayoutProps {
   showBackButton?: boolean;
-  onBackClick$?: () => void;
+  onBackClick$?: QRL<() => void>;
 }
 
 export default component$<PageLayoutProps>(

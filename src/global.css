@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+:root {
+  --color-white: oklch(100% 0 0);
+  --color-gray-50: oklch(98% 0.002 106);
+  --color-gray-100: oklch(96% 0.004 106);
+  --color-gray-200: oklch(92% 0.008 106);
+  --color-gray-300: oklch(86% 0.015 106);
+  --color-gray-400: oklch(76% 0.028 106);
+  --color-gray-500: oklch(63% 0.044 106);
+  --color-gray-600: oklch(48% 0.064 106);
+  --color-gray-700: oklch(35% 0.084 106);
+  --color-gray-800: oklch(25% 0.098 106);
+  --color-gray-900: oklch(17% 0.104 106);
+  --color-black: oklch(8% 0.006 106);
+
+  --color-primary: oklch(0.61 0.18 220);
+  --color-primary-hover: oklch(0.55 0.22 220);
+  --color-secondary: oklch(0.65 0.15 250);
+  --color-secondary-hover: oklch(0.58 0.19 250);
+
+  --color-success: oklch(0.72 0.18 145);
+  --color-success-hover: oklch(0.66 0.22 145);
+  --color-warning: oklch(0.84 0.2 65);
+  --color-warning-hover: oklch(0.78 0.24 65);
+  --color-error: oklch(0.62 0.22 25);
+  --color-error-hover: oklch(0.56 0.26 25);
+  --color-info: oklch(0.65 0.18 220);
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-gray-50);
+  --color-bg-tertiary: var(--color-gray-100);
+  --color-bg-inverse: var(--color-gray-900);
+
+  --color-text-primary: var(--color-gray-900);
+  --color-text-secondary: var(--color-gray-600);
+  --color-text-tertiary: var(--color-gray-400);
+  --color-text-inverse: var(--color-white);
+  --color-text-on-primary: var(--color-white);
+
+  --color-border-primary: var(--color-gray-200);
+  --color-border-secondary: var(--color-gray-300);
+  --color-border-focus: var(--color-primary);
+}
+
+* {
+  font-family:
+    "Inter",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    sans-serif;
+}
+
+body {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}

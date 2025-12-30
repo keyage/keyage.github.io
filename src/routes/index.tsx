@@ -1,5 +1,5 @@
-import { component$, $ } from "@builder.io/qwik";
-import { useNavigate } from "@builder.io/qwik-city";
+import { component$ } from "@builder.io/qwik";
+import { Link } from "@builder.io/qwik-city";
 import { LuMapPin, LuSprout, LuCoffee } from "@qwikest/icons/lucide";
 import PageLayout from "~/components/page-layout";
 import FlexibleGrid from "~/components/flexible-grid";
@@ -7,31 +7,6 @@ import ContactCard from "~/components/contact-card";
 import type { DocumentHead } from "@builder.io/qwik-city";
 
 export default component$(() => {
-  const navigate = useNavigate();
-
-  const handleNavigation = $(async (e: Event, path: string) => {
-    e.preventDefault();
-
-    const doc = document as Document & {
-      startViewTransition?: (callback: () => void) => {
-        finished: Promise<void>;
-      };
-    };
-    if (!doc.startViewTransition) {
-      navigate(path);
-      return;
-    }
-
-    const transition = doc.startViewTransition(() => {
-      navigate(path);
-    });
-
-    try {
-      await transition.finished;
-    } catch (error) {
-      console.log("View transition failed:", error);
-    }
-  });
 
   return (
     <PageLayout>
@@ -75,11 +50,11 @@ export default component$(() => {
           />
         </FlexibleGrid>
 
-        <ContactCard
-          onClick$={($event) => handleNavigation($event!, "/contact")}
-          title="get in touch"
-          fullWidth={true}
-        />
+<ContactCard
+            href="/contact"
+            title="get in touch"
+            fullWidth={true}
+          />
       </div>
 
       <div

@@ -1,5 +1,24 @@
 {
   "name": "qwikey",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "qwik build",
+    "build.client": "vite build",
+    "build.preview": "vite build --ssr src/entry.preview.tsx",
+    "build.server": "qwik check-client src dist && vite build -c adapters/static/vite.config.ts",
+    "build.types": "tsc --incremental --noEmit",
+    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
+    "dev": "vite --mode ssr",
+    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
+    "fmt": "oxfmt .",
+    "fmt.check": "oxfmt --check .",
+    "lint": "oxlint --react-plugin --jsx-a11y-plugin --import-plugin",
+    "lint.fix": "oxlint --fix-dangerously --react-plugin --jsx-a11y-plugin --import-plugin",
+    "preview": "qwik build preview && vite preview --open",
+    "start": "vite --open --mode ssr",
+    "qwik": "qwik"
+  },
   "devDependencies": {
     "@builder.io/qwik": "^1.18.0",
     "@builder.io/qwik-city": "^1.18.0",
@@ -21,30 +40,11 @@
   "engines": {
     "node": "^18.17.0 || ^20.3.0 || >=21.0.0"
   },
-  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime",
-  "private": true,
-  "scripts": {
-    "build": "qwik build",
-    "build.client": "vite build",
-    "build.preview": "vite build --ssr src/entry.preview.tsx",
-    "build.server": "qwik check-client src dist && vite build -c adapters/static/vite.config.ts",
-    "build.types": "tsc --incremental --noEmit",
-    "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
-    "dev": "vite --mode ssr",
-    "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "fmt": "oxfmt .",
-    "fmt.check": "oxfmt --check .",
-    "lint": "oxlint --react-plugin --jsx-a11y-plugin --import-plugin",
-    "lint.fix": "oxlint --fix-dangerously --react-plugin --jsx-a11y-plugin --import-plugin",
-    "preview": "qwik build preview && vite preview --open",
-    "start": "vite --open --mode ssr",
-    "qwik": "qwik"
-  },
-  "type": "module",
   "pnpm": {
     "overrides": {
       "glob": "^10.0.0",
       "inflight": "^2.0.0"
     }
-  }
+  },
+  "engines-annotation": "Mostly required by sharp which needs a Node-API v9 compatible runtime"
 }

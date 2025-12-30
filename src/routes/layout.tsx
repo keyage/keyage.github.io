@@ -4,7 +4,8 @@ import { Slot } from "@builder.io/qwik";
 export default component$(() => {
   return (
     <>
-      <style>{`
+      <style
+        dangerouslySetInnerHTML={`
         ::view-transition {
           position: fixed;
           inset: 0;
@@ -79,7 +80,8 @@ export default component$(() => {
             animation: none !important;
           }
         }
-      `}</style>
+      `}
+      />
       <Slot />
     </>
   );

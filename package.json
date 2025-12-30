@@ -3,14 +3,13 @@
   "devDependencies": {
     "@builder.io/qwik": "^1.18.0",
     "@builder.io/qwik-city": "^1.18.0",
-    "@eslint/js": "latest",
     "@qwikest/icons": "^0.0.13",
     "@tailwindcss/vite": "^4.1.18",
     "@types/node": "25.0.3",
-    "eslint": "9.39.2",
-    "eslint-plugin-qwik": "^1.18.0",
     "globals": "16.5.0",
-    "prettier": "3.7.4",
+    "oxlint": "^0.17.0",
+    "oxlint-tsgolint": "^0.10.0",
+    "oxfmt": "^0.17.0",
     "tailwindcss": "^4.1.18",
     "typescript": "5.9.3",
     "typescript-eslint": "8.51.0",
@@ -33,12 +32,19 @@
     "deploy": "echo 'Run \"npm run qwik add\" to install a server adapter'",
     "dev": "vite --mode ssr",
     "dev.debug": "node --inspect-brk ./node_modules/vite/bin/vite.js --mode ssr --force",
-    "fmt": "prettier --write .",
-    "fmt.check": "prettier --check .",
-    "lint": "eslint \"src/**/*.ts*\"",
+    "fmt": "oxfmt .",
+    "fmt.check": "oxfmt --check .",
+    "lint": "oxlint --react-plugin --jsx-a11y-plugin --import-plugin",
+    "lint.fix": "oxlint --fix-dangerously --react-plugin --jsx-a11y-plugin --import-plugin",
     "preview": "qwik build preview && vite preview --open",
     "start": "vite --open --mode ssr",
     "qwik": "qwik"
   },
-  "type": "module"
+  "type": "module",
+  "pnpm": {
+    "overrides": {
+      "glob": "^10.0.0",
+      "inflight": "^2.0.0"
+    }
+  }
 }

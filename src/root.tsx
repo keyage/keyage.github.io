@@ -1,38 +1,38 @@
-import { component$, isDev } from "@builder.io/qwik";
-import { QwikCityProvider, RouterOutlet } from "@builder.io/qwik-city";
-import { RouterHead } from "./components/router-head/router-head";
+import { component$, isDev } from '@builder.io/qwik';
+import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
+import { RouterHead } from './components/router-head/router-head';
 
-import "./global.css";
+import './global.css';
 
 export default component$(() => {
   return (
     <QwikCityProvider>
       <head>
-        <meta charset="utf-8" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <meta charset='utf-8' />
+        <link rel='preconnect' href='https://fonts.googleapis.com' />
         <link
-          rel="preconnect"
-          href="https://fonts.gstatic.com"
-          crossOrigin=""
+          rel='preconnect'
+          href='https://fonts.gstatic.com'
+          crossOrigin=''
         />
         <link
-          href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
-          rel="stylesheet"
+          href='https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'
+          rel='stylesheet'
         />
 
         <link
-          href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap"
-          rel="stylesheet"
+          href='https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap'
+          rel='stylesheet'
         />
         {!isDev && (
           <link
-            rel="manifest"
+            rel='manifest'
             href={`${import.meta.env.BASE_URL}manifest.json`}
           />
         )}
         <RouterHead />
       </head>
-      <body lang="en">
+      <body lang='en'>
         <RouterOutlet />
       </body>
     </QwikCityProvider>

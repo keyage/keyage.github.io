@@ -65,18 +65,6 @@ body {
   color: var(--color-text-primary);
 }
 
-::view-transition-old(root),
-::view-transition-new(root) {
-  animation-duration: 0.4s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-::view-transition-old(name),
-::view-transition-new(name) {
-  animation-duration: 0.6s;
-  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 body {
   position: relative;
   overflow-x: hidden;
@@ -152,7 +140,7 @@ a:disabled:hover {
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.glass-button:hover .button-right-icon {
+.button-right-icon {
   opacity: 1;
   transform: translateX(0);
 }
@@ -166,7 +154,7 @@ a:disabled:hover {
   transform: translateY(-50%) translateX(40px);
 }
 
-.glass-button:hover .button-right-text {
+.button-right-text {
   opacity: 1;
   transform: translateY(-50%) translateX(-8px);
 }

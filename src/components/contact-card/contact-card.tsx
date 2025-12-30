@@ -1,5 +1,7 @@
 import { component$, QRL } from '@builder.io/qwik';
 import { Button } from '../button';
+import { LuArrowRight } from '@qwikest/icons/lucide';
+import type { JSXNode } from '@builder.io/qwik';
 
 interface ContactCardProps {
   href?: string;
@@ -19,6 +21,11 @@ export default component$<ContactCardProps>(
         target={target}
         rel={rel}
         onClick$={onClick$}
+        rightIcon={
+          subtitle
+            ? undefined
+            : ((<LuArrowRight class='text-base' />) as JSXNode)
+        }
         style='color: var(--color-text-primary)'
         class={`${fullWidth ? 'w-full' : 'flex-1'} border border-gray-200 px-4 py-3 hover:bg-accent hover:bg-opacity-10 hover:-translate-y-0.5 transition-all duration-300`}
       >

@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - "main"
+      - 'main'
 
 jobs:
   check:
@@ -21,7 +21,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 24.7.0
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - run: corepack enable
 
@@ -50,7 +50,7 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 24.7.0
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - run: corepack enable
 

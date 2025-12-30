@@ -7,7 +7,7 @@ import type { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
   const navigate = useNavigate();
-  
+
   return (
     <PageLayout showBackButton={true} onBackClick$={$(() => navigate(-1))}>
       <div class='space-y-4'>

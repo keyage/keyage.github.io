@@ -1,5 +1,14 @@
-import { component$, isDev, useSignal, useVisibleTask$ } from '@builder.io/qwik';
-import { QwikCityProvider, RouterOutlet, useLocation } from '@builder.io/qwik-city';
+import {
+  component$,
+  isDev,
+  useSignal,
+  useVisibleTask$,
+} from '@builder.io/qwik';
+import {
+  QwikCityProvider,
+  RouterOutlet,
+  useLocation,
+} from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
@@ -11,15 +20,16 @@ export default component$(() => {
 
   useVisibleTask$(({ track }) => {
     track(() => location.url.pathname);
-    
+
     const currentPath = location.url.pathname;
     const previousPath = previousPathSignal.value;
-    
+
     if (previousPath && currentPath !== previousPath) {
-      isBackSignal.value = currentPath.length < previousPath.length || 
-                          (currentPath === '/' && previousPath !== '/');
+      isBackSignal.value =
+        currentPath.length < previousPath.length ||
+        (currentPath === '/' && previousPath !== '/');
     }
-    
+
     previousPathSignal.value = currentPath;
   });
 

@@ -1,15 +1,12 @@
 import { component$, $ } from '@builder.io/qwik';
-import { useNavigate } from '@builder.io/qwik-city';
 import PageLayout from '~/components/page-layout';
 import FlexibleGrid from '~/components/flexible-grid';
 import ContactCard from '~/components/contact-card';
 import type { DocumentHead } from '@builder.io/qwik-city';
 
 export default component$(() => {
-  const navigate = useNavigate();
-
   return (
-    <PageLayout showBackButton={true} onBackClick$={$(() => navigate(-1))}>
+    <PageLayout showBackButton={true} onBackClick$={$(() => history.back())}>
       <div class='space-y-4'>
         <h1
           class='indie-flower-regular text-5xl'

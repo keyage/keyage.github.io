@@ -1,38 +1,10 @@
-import {
-  component$,
-  isDev,
-  useSignal,
-  useVisibleTask$,
-} from '@builder.io/qwik';
-import {
-  QwikCityProvider,
-  RouterOutlet,
-  useLocation,
-} from '@builder.io/qwik-city';
+import { component$, isDev } from '@builder.io/qwik';
+import { QwikCityProvider, RouterOutlet } from '@builder.io/qwik-city';
 import { RouterHead } from './components/router-head/router-head';
 
 import './global.css';
 
 export default component$(() => {
-  const isBackSignal = useSignal(false);
-  const previousPathSignal = useSignal('');
-  const location = useLocation();
-
-  useVisibleTask$(({ track }) => {
-    track(() => location.url.pathname);
-
-    const currentPath = location.url.pathname;
-    const previousPath = previousPathSignal.value;
-
-    if (previousPath && currentPath !== previousPath) {
-      isBackSignal.value =
-        currentPath.length < previousPath.length ||
-        (currentPath === '/' && previousPath !== '/');
-    }
-
-    previousPathSignal.value = currentPath;
-  });
-
   return (
     <QwikCityProvider>
       <head>
@@ -60,7 +32,7 @@ export default component$(() => {
         )}
         <RouterHead />
       </head>
-      <body lang='en' data-transition-back={isBackSignal.value.toString()}>
+      <body lang='en'>
         <RouterOutlet />
       </body>
     </QwikCityProvider>

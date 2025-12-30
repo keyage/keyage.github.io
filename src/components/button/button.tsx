@@ -1,5 +1,4 @@
 import { component$, Slot, QRL } from '@builder.io/qwik';
-import { Link } from '@builder.io/qwik-city';
 
 export interface ButtonProps {
   size?: 'sm' | 'md' | 'lg';
@@ -62,9 +61,9 @@ export const Button = component$<ButtonProps>(props => {
 
   if (href) {
     return (
-      <Link href={href} target={target} rel={rel} {...commonProps}>
+      <a href={href} target={target} rel={rel} {...commonProps}>
         {innerContent}
-      </Link>
+      </a>
     );
   }
 

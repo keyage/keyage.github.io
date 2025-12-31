@@ -23,10 +23,10 @@ export default component$(() => {
           i build things for the web. mostly code, sometimes design.
         </p>
         <p
-          class='text-base leading-relaxed opacity-80'
+          class='text-md leading-relaxed opacity-80'
           style='color: var(--color-text-tertiary)'
         >
-          currently working on Android apps, among other things
+          i love roxy!
         </p>
       </div>
 
